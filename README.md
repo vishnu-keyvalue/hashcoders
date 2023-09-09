@@ -1,2 +1,8 @@
-# hashcoders
-Repo for Keycode 2023
+## How to use
+
+```sh
+git clone https://github.com/twbs/examples.git
+cd examples/react-nextjs/
+npm install
+npm start
+```
