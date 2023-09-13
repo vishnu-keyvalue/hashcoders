@@ -1,12 +1,8 @@
 import Head from "next/head";
-import { Button } from "react-bootstrap"
-import { useRouter } from 'next/navigation';
 import { brandName } from "@/constants/common";
 
 
 export default function Home() {
-  const { push } = useRouter();
-
   return (
     <>
       <Head>
@@ -17,12 +13,7 @@ export default function Home() {
       </Head>
       <div>
         <div className="d-flex flex-row-reverse justify-content-center gap-5">
-          <Button variant="primary" onClick={() => push('/login')}>
-            Login
-          </Button>
-          <Button variant="primary" onClick={() => push('/login')}>
-            Sign up
-          </Button>
+          <p>Home</p>
         </div>
       </div>
     </>
