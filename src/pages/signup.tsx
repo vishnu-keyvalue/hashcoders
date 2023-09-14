@@ -1,8 +1,8 @@
 import PublicLayout from "@/components/PublicLayout";
-import { user } from "@/states/atom";
+import { userAtom } from "@/states/atom";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
+import { Button, Form } from "react-bootstrap"
 import { useRecoilState } from "recoil";
 
 export default function SignUp() {
@@ -12,7 +12,7 @@ export default function SignUp() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isChecked, setChecked] = useState(false);
 
-  const [, setUsername] = useRecoilState(user);
+  const [, setUsername] = useRecoilState(userAtom);
 
 
   const { replace } = useRouter();

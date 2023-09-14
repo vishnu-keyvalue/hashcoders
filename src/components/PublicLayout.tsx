@@ -38,7 +38,7 @@ const PublicLayout: FC<any> = ({ children }) => {
               />
               <p className="text-white">Register</p>
             </a>
-            <a href="/login" className="d-flex align-items-start gap-2 text-center text-decoration-none">
+            <a href="/" className="d-flex align-items-start gap-2 text-center text-decoration-none">
               <Image
                 priority
                 src="/icons/login.svg"
