@@ -14,7 +14,7 @@ const SidebarMenu: FC = () => {
     return (
         <Sidebar rootStyles={{minHeight: '89vh', position: 'fixed', bottom: 0, top: 0,
         boxShadow: '0px 0px 32px 0px rgba(136, 152, 170, 0.15)'}}>
-            <h4 style={{margin: 20}}>Ad Deck</h4>
+            <h4 style={{margin: 20}}>ADHere</h4>
             <Menu>
                 {menuItemArray?.map(((item, index) => (
                     <MenuItem 

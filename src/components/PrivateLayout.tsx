@@ -8,7 +8,7 @@ import { userAtom } from "@/states/atom";
 
 type PrivateLayoutProps = {
     title?: string;
-    children: JSX.Element
+    children?: JSX.Element
 }
 
 const PrivateLayout: FC<PrivateLayoutProps> = ({ children, title }) => {

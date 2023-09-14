@@ -1,5 +1,4 @@
-import Head from "next/head";
-import { brandName, platformListingColumns } from "@/constants/common";
+import { platformListingColumns } from "@/constants/common";
 import Table from "@/components/Table";
 import Icon from "@/components/Icon";
 import PrivateLayout from "@/components/PrivateLayout";
