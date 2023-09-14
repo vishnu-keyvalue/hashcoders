@@ -1,6 +1,6 @@
 import PublicLayout from "@/components/PublicLayout";
 import { brandName } from "@/constants/common";
-import { user } from "@/states/atom";
+import { userAtom } from "@/states/atom";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
@@ -8,7 +8,7 @@ import { useRecoilState } from "recoil";
 
 export default function ConfirmOtp() {
   const [otp, setOtp] = useState('');
-  const [userName,] = useRecoilState(user);
+  const [user,] = useRecoilState(userAtom);
 
   const { replace } = useRouter();
 
@@ -36,8 +36,8 @@ export default function ConfirmOtp() {
         <div
           style={styles.boxContainer}
           className="mb-3 mt-md-4">
-          <p style={styles.title} className="fw-bold text-center mb-2">{`${userName?.name}, we are a click away`}</p>
-          <p style={styles.message} className="fw-bold text-center mb-2">{`Enter the OTP sent to 91******${userName?.phoneNumber.slice(-2)}`}</p>
+          <p style={styles.title} className="fw-bold text-center mb-2">{`${user?.name}, we are a click away`}</p>
+          <p style={styles.message} className="fw-bold text-center mb-2">{`Enter the OTP sent to 91******${user?.phoneNumber.slice(-2)}`}</p>
           <div className="mb-3">
             <Form className="d-flex flex-column">
             <Form.Group
