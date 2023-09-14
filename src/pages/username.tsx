@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import TextInput from "@/components/TextInput";
 import { useRecoilValue } from "recoil";
 import { userNameState } from "@/states/atom";
+import LineChart from "@/components/LineChart";
 
 export default function Username() {
   const username = useRecoilValue(userNameState);
@@ -19,6 +20,7 @@ export default function Username() {
       <Container as="main" className="py-4 px-3 mx-auto">
         <Header />
         <h1 className="display-6">{`User name is ${username}`}</h1>
+        <LineChart title="Sales value" />
         <Footer />
       </Container>
     </>
