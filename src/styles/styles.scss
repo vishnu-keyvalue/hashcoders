@@ -2,6 +2,15 @@ $success: #7952b3;
 
 @import "bootstrap/scss/bootstrap.scss";
 
+
 body {
-  // padding: 1.5rem;
+  font-family: 'Open Sans', sans-serif;
+}
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: '#ADB5BD';
+  opacity: 0.5; /* Firefox */
+}
+
+.otp::placeholder {
+  text-align: center;
 }

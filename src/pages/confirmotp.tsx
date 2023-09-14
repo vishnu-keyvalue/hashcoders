@@ -1,39 +1,34 @@
 import PublicLayout from "@/components/PublicLayout";
 import { brandName } from "@/constants/common";
+import { user } from "@/states/atom";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
+import { useRecoilState } from "recoil";
 
-export default function Login() {
-
-  const [phoneNumber, setPhoneNumber] = useState('');
+export default function ConfirmOtp() {
   const [otp, setOtp] = useState('');
-  const [isOtpSend, setOtpSend] = useState(false);
+  const [userName,] = useRecoilState(user);
 
   const { replace } = useRouter();
 
-  const submitDisabled = !(!isOtpSend && phoneNumber.length || isOtpSend && !!otp.length);
+  const submitDisabled = !otp.length;
 
 
   const onButtonClick = () => {
-    if (isOtpSend) {
-      replace('/home');
-    }
-    else {
-      setOtpSend(true);
-    }
+    replace('/home');
   }
 
   return (
     <PublicLayout>
       <div style={{ marginTop: '30px' }} className="d-flex flex-column align-items-center justify-content-center">
-        <h3 className="text-white">Welcome Back!</h3>
+        <h3 className="text-white">Welcome Aboard!</h3>
         <p style={{
           color: "#CED4DA",
           fontSize: '16px',
           fontWeight: 'lighter'
 
-        }} className="text-center">Let’s continue the creation & Embrace the existence</p>
+        }} className="text-center">Sign Up and Rent Out the space for people to find new spaces <br /> and dimensions! A click away to explore</p>
       </div>
       <div style={{
         marginTop: '50px',
@@ -41,28 +36,18 @@ export default function Login() {
         <div
           style={styles.boxContainer}
           className="mb-3 mt-md-4">
-          <p style={styles.title} className="fw-bold text-center mb-2">Dive In</p>
+          <p style={styles.title} className="fw-bold text-center mb-2">{`${userName?.name}, we are a click away`}</p>
+          <p style={styles.message} className="fw-bold text-center mb-2">{`Enter the OTP sent to 91******${userName?.phoneNumber.slice(-2)}`}</p>
           <div className="mb-3">
             <Form className="d-flex flex-column">
-              <Form.Group
-                className="mb-3"
-                style={styles.inputContainer}
-                controlId="formBasicPassword"
-              >
-                <Form.Control
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  value={phoneNumber}
-                  type="number"
-                  placeholder="Your 10 digit Mobile No" />
-              </Form.Group>
-              <Form.Group
+            <Form.Group
                 className="mb-3"
                 style={styles.inputContainer}
                 controlId="formBasicPassword"
               >
                 <Form.Control
                   value={otp}
-                  disabled={!isOtpSend}
+                  className="otp"
                   onChange={(e) => setOtp(e.target.value)}
                   type="text" placeholder="OTP" />
               </Form.Group>
@@ -72,7 +57,7 @@ export default function Login() {
                 padding: '8px 35px 8px 35px',
                 alignSelf: 'center'
               }} onClick={onButtonClick} disabled={submitDisabled}>
-                {isOtpSend ? 'Confirm' : 'Send OTP'}
+                Dive in!
               </Button>
             </Form>
           </div>
@@ -88,13 +73,19 @@ const styles = {
     color: '#8898AA',
     fontWeight: 'lighter',
     paddingTop: '80px',
+  },
+  message: {
+    fontSize: '18px',
+    color: '#8898AA',
+    fontWeight: 'lighter',
     paddingBottom: '40px'
   },
   boxContainer: {
     backgroundColor: '#F4F5F7',
     paddingLeft: '48px',
     paddingRight: '48px',
-    borderRadius: '6px'
+    borderRadius: '6px',
+    paddingBottom: '25px'
   },
   inputContainer: {
     width: '450px',
