@@ -17,15 +17,19 @@
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
+    "@canvasjs/react-charts": "^1.0.0",
     "@types/node": "^20.4.4",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "bootstrap": "^5.3.0",
+    "chart.js": "^4.4.0",
     "lint-staged": "^14.0.1",
     "next": "^13.4.12",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-pro-sidebar": "^1.1.0-alpha.1",
     "recoil": "^0.7.7",
     "tsc": "^2.0.4",
     "typescript": "^5.1.6"
