@@ -50,9 +50,7 @@ const PrivateLayout: FC<PrivateLayoutProps> = ({ children, title }) => {
                             </div>
                         </div>
                     </div>
-                    <div style={{ backgroundColor: "#F8F9FE" }}>
                         {children}
-                    </div>
                 </div>
             </div>
         </>
