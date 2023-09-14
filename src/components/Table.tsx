@@ -11,7 +11,7 @@ const Table: FC<TableProps> = ({columns, data, title}) => {
     return (
         <div style={{
             borderRadius: '6px',
-            margin: '30px 30px 30px 0px',
+            margin: '30px 0px 30px 0px',
             backgroundColor: 'white',
             boxShadow: '0px 0px 32px 0px rgba(136, 152, 170, 0.15)'
         }}>
