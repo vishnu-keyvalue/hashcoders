@@ -17,7 +17,7 @@ export default function Login() {
 
   const onButtonClick = () => {
     if (isOtpSend) {
-      replace('/home');
+      replace('/host/home');
     }
     else {
       setOtpSend(true);
