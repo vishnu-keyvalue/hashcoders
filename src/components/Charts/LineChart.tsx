@@ -70,6 +70,10 @@ const LineChart: FC<LineChartParams> = ({
               }
               ]
           }}
+          options={{
+            responsive: true,
+            maintainAspectRatio: true,
+          }} 
         />
       </div>
     );

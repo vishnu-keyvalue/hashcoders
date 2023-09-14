@@ -3,7 +3,7 @@ import { brandName } from "@/constants/common";
 import { userAtom } from "@/states/atom";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
+import { Button, Form } from "react-bootstrap"
 import { useRecoilState } from "recoil";
 
 export default function ConfirmOtp() {
@@ -16,7 +16,7 @@ export default function ConfirmOtp() {
 
 
   const onButtonClick = () => {
-    replace('/home');
+    replace('/host/home');
   }
 
   return (

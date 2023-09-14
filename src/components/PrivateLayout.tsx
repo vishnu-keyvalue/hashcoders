@@ -1,6 +1,6 @@
 import { brandName } from "@/constants/common";
 import Head from "next/head";
-import React, { FC } from "react";
+import { FC } from "react";
 import Image from 'next/image';
 import SidebarMenu from "./SidebarMenu";
 import { useRecoilValue } from "recoil";
@@ -8,10 +8,11 @@ import { userAtom } from "@/states/atom";
 
 type PrivateLayoutProps = {
     title?: string;
-    children: JSX.Element
+    children?: JSX.Element;
+    backgroundColor?: string;
 }
 
-const PrivateLayout: FC<PrivateLayoutProps> = ({ children, title }) => {
+const PrivateLayout: FC<PrivateLayoutProps> = ({ children, title, backgroundColor = "" }) => {
     const user = useRecoilValue(userAtom);
     return (
         <>
@@ -50,7 +51,9 @@ const PrivateLayout: FC<PrivateLayoutProps> = ({ children, title }) => {
                             </div>
                         </div>
                     </div>
+                    <div style={{ backgroundColor }}>
                         {children}
+                    </div>
                 </div>
             </div>
         </>
