@@ -1,4 +1,4 @@
-import { userNameState } from "@/states/atom";
+import { user } from "@/states/atom";
 import { FC, useState } from "react";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -8,7 +8,7 @@ import { Alert } from "react-bootstrap";
 
 
 const TextInput: FC = () => {
-    const [, setUsername] = useRecoilState(userNameState);
+    const [, setUsername] = useRecoilState(user);
 
     const [value, setValue] = useState<string>('');
 
@@ -26,7 +26,7 @@ const TextInput: FC = () => {
         if (value === '') {
           setShowAlert(true);
         } else {
-          setUsername(value);
+          setUsername({name: '', phoneNumber: ''});
           push('/username');
         }
       };
