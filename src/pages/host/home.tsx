@@ -3,6 +3,10 @@ import Table from "@/components/Table";
 import Icon from "@/components/Icon";
 import PrivateLayout from "@/components/PrivateLayout";
 import SummaryCard from "@/components/SummaryCard";
+import LineChart from "@/components/Charts/LineChart";
+import CreateListing from "@/components/createListing";
+import CustomModal from '@/components/Modal';
+import { useState } from "react";
 
 const platformListingData = [
   {
@@ -19,19 +23,47 @@ const platformListingData = [
     uniqueUsers: '10',
     bounceRate: <div className="gap-2 d-flex"><Icon url='/icons/up.png' width={15} height={15} /><p>30%</p></div>,
   },
+  {
+    id: 2,
+    listingName: 'Beetlejuice',
+    visitors: '30',
+    uniqueUsers: '10',
+    bounceRate: <div className="gap-2 d-flex"><Icon url='/icons/up.png' width={15} height={15} /><p>30%</p></div>,
+  },
+  {
+    id: 2,
+    listingName: 'Beetlejuice',
+    visitors: '30',
+    uniqueUsers: '10',
+    bounceRate: <div className="gap-2 d-flex"><Icon url='/icons/up.png' width={15} height={15} /><p>30%</p></div>,
+  },
+
+  {
+    id: 2,
+    listingName: 'Beetlejuice',
+    visitors: '30',
+    uniqueUsers: '10',
+    bounceRate: <div className="gap-2 d-flex"><Icon url='/icons/up.png' width={15} height={15} /><p>30%</p></div>,
+  },
 ]
 
 export default function Home() {
+  const [show, setShow] = useState(false);
   return (
     <>
       <PrivateLayout title="DASHBOARD">
         <>
           <SummarySection />
-          <Table title="Platform Listing"
+          <div style={{justifyContent: 'space-between', display: 'flex', margin: '30px 0px 30px 0px'}}>
+            <LineChart />
+            <CreateListing />
+            </div>
+            <Table onRowClick={(row) => setShow(true)} title="Platform Listing"
             columns={platformListingColumns}
             data={platformListingData} />
         </>
       </PrivateLayout>
+      <CustomModal setShow={setShow} show={show} />
     </>
   );
 }
@@ -46,7 +78,7 @@ const SummarySection = () => {
         duration="Since last month"
         isGain
         percentage="3.48%"
-        title="METRO KALOOR BILLBOARD"
+        title="TOTAL AD BOOKINGS"
         icon="/icons/stats.png"
       />
       <SummaryCard
