@@ -5,9 +5,10 @@ interface TableProps {
     columns: TableColumn<any>[]
     data: any[],
     title: string;
+    onRowClick: (row: any) => void;
 }
 
-const Table: FC<TableProps> = ({columns, data, title}) => {
+const Table: FC<TableProps> = ({columns, data, title, onRowClick}) => {
     return (
         <div style={{
             borderRadius: '6px',
@@ -34,7 +35,7 @@ const Table: FC<TableProps> = ({columns, data, title}) => {
                     }
                 }
             }}
-            onRowClicked={(row) => {console.log(row)}}
+            onRowClicked={onRowClick}
             data={data}
         /></div>
     );

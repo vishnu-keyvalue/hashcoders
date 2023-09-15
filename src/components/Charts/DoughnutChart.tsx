@@ -55,7 +55,7 @@ const DoughnutChart: FC<DoughnutChartParams> = ({
 
   return (
     <Container
-      className='shadow-sm p-3 mb-5 bg-white rounded w-25 h-25'
+      className='shadow-sm p-3 mb-5 bg-white rounded w-100 h-100'
     >
       <h6>{title}</h6>
       <h4>{criteria}</h4>

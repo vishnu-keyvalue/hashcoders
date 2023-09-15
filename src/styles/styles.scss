@@ -16,3 +16,7 @@ body {
 .otp::placeholder {
   text-align: center;
 }
+.my-modal {
+  width: 70vw;    /* Occupy the 90% of the screen width */
+  max-width: 90vw;
+} 
